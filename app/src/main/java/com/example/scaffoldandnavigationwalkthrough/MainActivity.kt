@@ -6,7 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.scaffoldandnavigationwalkthrough.ui.components.ScaffoldApp
+import com.example.scaffoldandnavigationwalkthrough.ui.navigation.ScaffoldApp
 import com.example.scaffoldandnavigationwalkthrough.ui.theme.ScaffoldAndNavigationWalkthroughTheme
 
 class MainActivity : ComponentActivity() {

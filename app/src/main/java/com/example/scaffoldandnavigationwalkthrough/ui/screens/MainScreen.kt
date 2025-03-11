@@ -8,7 +8,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavController
 import com.example.scaffoldandnavigationwalkthrough.R
-import com.example.scaffoldandnavigationwalkthrough.ui.components.MainTopAppBar
+import com.example.scaffoldandnavigationwalkthrough.ui.appbars.MainTopAppBar
 
 @Composable
 fun MainScreen(navController: NavController) {

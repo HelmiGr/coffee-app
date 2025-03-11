@@ -1,4 +1,4 @@
-package com.example.scaffoldandnavigationwalkthrough.ui.components
+package com.example.scaffoldandnavigationwalkthrough.ui.appbars
 
 import androidx.navigation.NavController
 import androidx.compose.material.icons.Icons
