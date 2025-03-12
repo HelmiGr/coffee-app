@@ -8,12 +8,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavController
 import com.example.scaffoldandnavigationwalkthrough.R
+import com.example.scaffoldandnavigationwalkthrough.ui.appbars.BottomBar
 import com.example.scaffoldandnavigationwalkthrough.ui.appbars.ScreenTopBar
 
 @Composable
 fun SettingsScreen(navController: NavController) {
     Scaffold(
-        topBar = { ScreenTopBar(stringResource(R.string.settings_screen_title), navController) }
+        topBar = { ScreenTopBar(stringResource(R.string.settings_screen_title), navController) },
+        bottomBar = { BottomBar(navController) }
     ) { innerPadding ->
         Text(text= stringResource(R.string.settings_screen_content), modifier = Modifier.padding(innerPadding))
     }
