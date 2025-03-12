@@ -15,7 +15,7 @@ const val BASE_URL = "https://random-data-api.com/api/"
 
 interface CoffeeApi {
     // to fetch list of coffees
-    @GET("coffee/random_coffee")
+    @GET("coffee/random_coffee?size=7")
     suspend fun getCoffees() : List<Coffee>
 
     companion object {

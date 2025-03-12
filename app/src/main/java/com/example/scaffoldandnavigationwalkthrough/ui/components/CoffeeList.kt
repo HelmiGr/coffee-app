@@ -11,9 +11,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.example.scaffoldandnavigationwalkthrough.models.Coffee
 
-// column with individual todos listed
-// components would be used if this was needed in multiple places
-// made a component since it's used separately in the walkthrough and is used in a screen
+// list with individual coffees listed
 @Composable
 fun CoffeeList(modifier: Modifier = Modifier, coffees: List<Coffee>) {
     LazyColumn (

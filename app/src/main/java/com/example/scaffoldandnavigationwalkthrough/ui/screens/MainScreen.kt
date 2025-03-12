@@ -10,13 +10,19 @@ import androidx.navigation.NavController
 import com.example.scaffoldandnavigationwalkthrough.R
 import com.example.scaffoldandnavigationwalkthrough.ui.appbars.BottomBar
 import com.example.scaffoldandnavigationwalkthrough.ui.appbars.MainTopAppBar
+import com.example.scaffoldandnavigationwalkthrough.ui.components.CoffeeList
+import com.example.scaffoldandnavigationwalkthrough.viewmodels.CoffeeUiState
 
 @Composable
-fun MainScreen(navController: NavController) {
+fun MainScreen(navController: NavController, modifier: Modifier, uiState: CoffeeUiState) {
     Scaffold(
         topBar = { MainTopAppBar(stringResource(R.string.main_screen_title), navController) },
         bottomBar = { BottomBar(navController) }
     ) { innerPadding ->
-        Text(text= stringResource(R.string.main_screen_content), modifier = Modifier.padding(innerPadding))
+        when (uiState) {
+            is CoffeeUiState.Loading -> LoadingScreen()
+            is CoffeeUiState.Success -> CoffeeList(modifier.padding(innerPadding), uiState.coffees)
+            is CoffeeUiState.Error -> ErrorScreen()
+        }
     }
 }
