@@ -33,11 +33,28 @@ class CoffeeViewModel: ViewModel() {
             try {
                 coffeeApi = CoffeeApi.getInstance() // gets an instance of the CoffeeApi
                 // if getting an instance is successful, a list of coffees is loaded with coffeeApi.getCoffees()
-                coffeeUiState = CoffeeUiState.Success(coffeeApi.getCoffees())
+                // coffeeUiState = CoffeeUiState.Success(coffeeApi.getCoffees())
+
+                // this line if for testing for whether uiState works and displays the error screen
+                // comment out coffeeUiState = CoffeeUiState.Success... for this
+                throw Exception("Simulated network error")
             } catch (e: Exception) {
                 Log.e("CoffeeViewModel", "Error fetching coffees: ${e.message}")
                 coffeeUiState = CoffeeUiState.Error // updates the CoffeeUiState to error
             }
+
+            // this works!
+            // logCurrentState() // the current state, once it changes, gets logged correctly
+        }
+    }
+
+    // for testing
+    private fun logCurrentState() {
+        // the current state of coffeeUiState
+        when (coffeeUiState) {
+            is CoffeeUiState.Loading -> Log.d("CoffeeViewModel", "Current state: Loading")
+            is CoffeeUiState.Success -> Log.d("CoffeeViewModel", "Current state: Success")
+            is CoffeeUiState.Error -> Log.d("CoffeeViewModel", "Current state: Error")
         }
     }
 }

@@ -11,7 +11,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.example.scaffoldandnavigationwalkthrough.models.Coffee
 
-// list with individual coffees listed
+// list of individual coffees
 @Composable
 fun CoffeeList(modifier: Modifier = Modifier, coffees: List<Coffee>) {
     LazyColumn (
