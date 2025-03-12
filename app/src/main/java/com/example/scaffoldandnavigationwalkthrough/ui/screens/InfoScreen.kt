@@ -10,6 +10,7 @@ import androidx.navigation.NavController
 import com.example.scaffoldandnavigationwalkthrough.R
 import com.example.scaffoldandnavigationwalkthrough.ui.appbars.BottomBar
 import com.example.scaffoldandnavigationwalkthrough.ui.appbars.ScreenTopBar
+import com.example.scaffoldandnavigationwalkthrough.ui.components.CoffeeList
 
 @Composable
 fun InfoScreen(navController: NavController) {
@@ -18,5 +19,6 @@ fun InfoScreen(navController: NavController) {
         bottomBar = { BottomBar(navController) }
     ) { innerPadding ->
         Text(text= stringResource(R.string.info_screen_content), modifier = Modifier.padding(innerPadding))
+        CoffeeList(modifier,uiState.coffees)
     }
 }
