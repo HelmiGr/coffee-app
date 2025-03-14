@@ -10,7 +10,6 @@ import androidx.navigation.NavController
 import com.example.scaffoldandnavigationwalkthrough.R
 import com.example.scaffoldandnavigationwalkthrough.ui.appbars.BottomBar
 import com.example.scaffoldandnavigationwalkthrough.ui.appbars.ScreenTopBar
-import com.example.scaffoldandnavigationwalkthrough.ui.components.CoffeeList
 
 // general information about coffee
 @Composable

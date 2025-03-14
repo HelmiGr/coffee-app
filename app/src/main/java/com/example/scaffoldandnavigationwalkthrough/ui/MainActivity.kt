@@ -1,4 +1,4 @@
-package com.example.scaffoldandnavigationwalkthrough
+package com.example.scaffoldandnavigationwalkthrough.ui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity

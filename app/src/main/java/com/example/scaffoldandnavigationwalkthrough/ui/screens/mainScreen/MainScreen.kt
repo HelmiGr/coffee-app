@@ -1,27 +1,23 @@
-package com.example.scaffoldandnavigationwalkthrough.ui.screens
+package com.example.scaffoldandnavigationwalkthrough.ui.screens.mainScreen
 
 import android.util.Log
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.example.scaffoldandnavigationwalkthrough.R
 import com.example.scaffoldandnavigationwalkthrough.ui.appbars.BottomBar
 import com.example.scaffoldandnavigationwalkthrough.ui.appbars.MainTopAppBar
-import com.example.scaffoldandnavigationwalkthrough.ui.components.CoffeeList
+import com.example.scaffoldandnavigationwalkthrough.ui.screens.ErrorScreen
+import com.example.scaffoldandnavigationwalkthrough.ui.screens.LoadingScreen
 import com.example.scaffoldandnavigationwalkthrough.viewmodels.CoffeeUiState
 import com.example.scaffoldandnavigationwalkthrough.viewmodels.CoffeeViewModel
 
 @Composable
-fun MainScreen(navController: NavController, modifier: Modifier, uiState: CoffeeUiState) {
-    val coffeeViewModel: CoffeeViewModel = viewModel()
-    val newUiState = coffeeViewModel.coffeeUiState
-
-    showCurrentState(newUiState) // this also works displaying the proper state.
+fun MainScreen(navController: NavController, modifier: Modifier, uiState: CoffeeUiState, viewModel: CoffeeViewModel) {
+    showCurrentState(uiState) // this also works displaying the proper state.
     // so the proper state is updated, but either Scaffold isn't updating it properly or
     // there might be a problem with loading the different screens
 
@@ -29,9 +25,9 @@ fun MainScreen(navController: NavController, modifier: Modifier, uiState: Coffee
         topBar = { MainTopAppBar(stringResource(R.string.main_screen_title), navController) },
         bottomBar = { BottomBar(navController) }
     ) { innerPadding ->
-        when (newUiState) {
+        when (uiState) {
             is CoffeeUiState.Loading -> LoadingScreen()
-            is CoffeeUiState.Success -> CoffeeList(modifier.padding(innerPadding), newUiState.coffees)
+            is CoffeeUiState.Success -> CoffeeList(modifier.padding(innerPadding), uiState.coffees) { viewModel.getCoffeeList() }
             is CoffeeUiState.Error -> ErrorScreen()
         }
     }
