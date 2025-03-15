@@ -27,6 +27,7 @@ fun RecommendationScreen(navController: NavController, viewModel: CoffeeViewMode
             onIntensifierSelected = { selected ->
                 viewModel.selectedIntensifier = selected // updates state in ViewModel
             },
-        ) { }
+            recommendedCoffee = viewModel.recommendedCoffee
+        ) { viewModel.recommendCoffee() }
     }
 }

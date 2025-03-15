@@ -6,10 +6,10 @@ import androidx.compose.runtime.Composable
 
 // A really visible button
 @Composable
-fun BigButton(onClick: () -> Unit) {
+fun BigButton(text: String, onClick: () -> Unit) {
     Button(
-        onClick = onClick /* viewmodel.getcoffees */
+        onClick = onClick
     ) {
-        Text(text = "Show More")
+        Text(text = text)
     }
 }

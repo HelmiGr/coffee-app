@@ -34,7 +34,7 @@ fun CoffeeList(modifier: Modifier = Modifier, coffees: List<Coffee>, onShowMore:
             CoffeeCard(coffee)
         }
         item {
-            BigButton(onClick = onShowMore)
+            BigButton("Show More", onClick = onShowMore)
         }
     }
 }

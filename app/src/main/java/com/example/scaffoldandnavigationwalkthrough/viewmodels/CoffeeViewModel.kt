@@ -36,6 +36,9 @@ class CoffeeViewModel: ViewModel() {
         private set
     // keeps track of which button in the recommendations has been pressed
     var selectedIntensifier by mutableStateOf<String?>(null)
+    // stores the recommended coffee
+    var recommendedCoffee by mutableStateOf<Coffee?>(null)
+        private set
 
     // once initialized call these functions:
     init {
@@ -64,6 +67,13 @@ class CoffeeViewModel: ViewModel() {
 
             // this works!
             // logCurrentState() // the current state, once it changes, gets logged correctly
+        }
+    }
+
+    // find and update the recommended coffee
+    fun recommendCoffee() {
+        selectedIntensifier?.let { intensifier ->
+            recommendedCoffee = displayedCoffees.firstOrNull { it.intensifier == intensifier }
         }
     }
 
