@@ -23,11 +23,19 @@ class CoffeeViewModel: ViewModel() {
     var coffeeUiState: CoffeeUiState by mutableStateOf(CoffeeUiState.Loading)
         private set // means that only this viewmodel can modify the TodoUiState
 
+    // --- main screen states ---
     // storing the coffees that have been fetched
     private var fetchedCoffees: List<Coffee> = emptyList()
     // stores all coffees even from earlier fetches
     var displayedCoffees by mutableStateOf<List<Coffee>>(emptyList())
         private set
+
+    // --- recommendation screen states ---
+    // stores unique intensifiers for the recommendation quiz
+    var uniqueIntensifiers by mutableStateOf<List<String>>(emptyList())
+        private set
+    // keeps track of which button in the recommendations has been pressed
+    var selectedIntensifier by mutableStateOf<String?>(null)
 
     // once initialized call these functions:
     init {
@@ -41,6 +49,7 @@ class CoffeeViewModel: ViewModel() {
                 coffeeApi = CoffeeApi.getInstance() // gets an instance of the CoffeeApi
                 fetchedCoffees = coffeeApi.getCoffees() // fetches the coffees
                 displayedCoffees = displayedCoffees + fetchedCoffees // if a fetch has been done more than once, store all coffees here
+                uniqueIntensifiers = displayedCoffees.map { it.intensifier }.distinct() // store coffees with unique intensifiers here
 
                 // if getting an instance is successful, a list of coffees is loaded with coffeeApi.getCoffees()
                 coffeeUiState = CoffeeUiState.Success(displayedCoffees)

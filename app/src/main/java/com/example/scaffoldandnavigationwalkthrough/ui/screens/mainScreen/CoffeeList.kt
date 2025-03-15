@@ -18,7 +18,7 @@ import com.example.scaffoldandnavigationwalkthrough.ui.components.CoffeeCard
 // list of individual coffees with a button at the end to do something
 @Composable
 fun CoffeeList(modifier: Modifier = Modifier, coffees: List<Coffee>, onShowMore: () -> Unit) {
-    LazyColumn (
+    LazyColumn(
         modifier = modifier
     ) {
         item {

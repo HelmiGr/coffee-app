@@ -7,7 +7,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.scaffoldandnavigationwalkthrough.ui.screens.InfoScreen
 import com.example.scaffoldandnavigationwalkthrough.ui.screens.mainScreen.MainScreen
-import com.example.scaffoldandnavigationwalkthrough.ui.screens.SettingsScreen
+import com.example.scaffoldandnavigationwalkthrough.ui.screens.recommendationScreen.RecommendationScreen
 import com.example.scaffoldandnavigationwalkthrough.viewmodels.CoffeeViewModel
 
 @Composable
@@ -22,6 +22,6 @@ fun ScaffoldApp() {
     ) {
         composable(route = "home") { MainScreen(navController, modifier = Modifier, uiState = coffeeUiState, viewModel = coffeeViewModel) }
         composable(route = "info") { InfoScreen(navController) }
-        composable(route = "settings") { SettingsScreen(navController) }
+        composable(route = "settings") { RecommendationScreen(navController, viewModel = coffeeViewModel) }
     }
 }
