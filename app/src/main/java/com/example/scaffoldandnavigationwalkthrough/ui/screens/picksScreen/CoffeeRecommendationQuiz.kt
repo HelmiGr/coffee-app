@@ -1,4 +1,4 @@
-package com.example.scaffoldandnavigationwalkthrough.ui.screens.recommendationScreen
+package com.example.scaffoldandnavigationwalkthrough.ui.screens.picksScreen
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.lazy.LazyColumn
@@ -6,6 +6,8 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
+import com.example.scaffoldandnavigationwalkthrough.R
 import com.example.scaffoldandnavigationwalkthrough.models.Coffee
 import com.example.scaffoldandnavigationwalkthrough.ui.components.BigButton
 import com.example.scaffoldandnavigationwalkthrough.ui.components.CoffeeCard
@@ -18,7 +20,7 @@ fun CoffeeRecommendationQuiz(modifier: Modifier, intensifiers: List<String>, sel
         modifier = modifier
     ) {
         item {
-            Text("Get a coffee recommendation based on the coffees in our today's recommended list based on the intensifier")
+            Text(stringResource(R.string.picks_screen_title_content))
         }
         items(intensifiers) { intensifier ->
             DifferentRadioButton(
@@ -28,12 +30,12 @@ fun CoffeeRecommendationQuiz(modifier: Modifier, intensifiers: List<String>, sel
             )
         }
         item {
-            BigButton("Submit", onClick = onSubmit)
+            BigButton(stringResource(R.string.picks_screen_button_text), onClick = onSubmit)
         }
         if (recommendedCoffee != null) {
             item {
                 Column {
-                    Text("The recommended coffee is:")
+                    Text(stringResource(R.string.picks_screen_recommendation_quiz_result_text))
                     CoffeeCard(recommendedCoffee)
                 }
             }

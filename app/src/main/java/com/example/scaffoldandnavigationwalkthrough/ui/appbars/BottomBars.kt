@@ -14,15 +14,16 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import com.example.scaffoldandnavigationwalkthrough.data.TabItem
+import com.example.scaffoldandnavigationwalkthrough.ui.navigation.Routes
 
 @Composable
 // displays the bottom bar used in navigation
 fun BottomBar(navController: NavController) {
     val backStackEntry = navController.currentBackStackEntryAsState()
     val tabs = listOf(
-        TabItem("Home", Icons.Filled.Home, route = "home"),
-        TabItem("Home", Icons.Filled.Info, route = "info"),
-        TabItem("Favourite", Icons.Filled.Favorite, route = "settings")
+        TabItem("Home", Icons.Filled.Home, route = Routes.HOME),
+        TabItem("Info", Icons.Filled.Info, route = Routes.INFO),
+        TabItem("Picks", Icons.Filled.Favorite, route = Routes.PICKS)
     )
     NavigationBar(
         containerColor = MaterialTheme.colorScheme.secondary

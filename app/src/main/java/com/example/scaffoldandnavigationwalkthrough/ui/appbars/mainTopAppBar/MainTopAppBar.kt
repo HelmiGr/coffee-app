@@ -12,6 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavController
 import com.example.scaffoldandnavigationwalkthrough.R
 import com.example.scaffoldandnavigationwalkthrough.ui.components.TopBarIconButton
+import com.example.scaffoldandnavigationwalkthrough.ui.navigation.Routes
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -24,7 +25,7 @@ fun MainTopAppBar(title: String, navController: NavController, expanded: Boolean
             title = { Text(text = title) },
             actions = {
                 TopBarIconButton(
-                    textResId = R.string.three_dots_for_more_icon_description,
+                    textResId = R.string.hamburger_menu_icon_description,
                     icon = Icons.Filled.Menu,
                     onClick = { onExpandedChange(!expanded) }
                 )
@@ -34,11 +35,11 @@ fun MainTopAppBar(title: String, navController: NavController, expanded: Boolean
                 ) {
                     ItemForDropdownMenu(
                         textResId = R.string.dropdown_text_for_info,
-                        onClick = { navController.navigate("info") }
+                        onClick = { navController.navigate(Routes.INFO) }
                     )
                     ItemForDropdownMenu(
-                        textResId = R.string.dropdown_text_for_settings,
-                        onClick = { navController.navigate("settings") }
+                        textResId = R.string.dropdown_text_for_picks,
+                        onClick = { navController.navigate(Routes.PICKS) }
                     )
                 }
             }

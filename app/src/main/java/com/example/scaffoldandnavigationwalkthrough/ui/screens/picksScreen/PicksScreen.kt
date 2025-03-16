@@ -1,4 +1,4 @@
-package com.example.scaffoldandnavigationwalkthrough.ui.screens.recommendationScreen
+package com.example.scaffoldandnavigationwalkthrough.ui.screens.picksScreen
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
@@ -15,9 +15,9 @@ import com.example.scaffoldandnavigationwalkthrough.viewmodels.CoffeeViewModel
 // and the application will give a result based on the coffees retrieved from the api
 // (or the current ones retrieved since they change all the time)
 @Composable
-fun RecommendationScreen(navController: NavController, viewModel: CoffeeViewModel) {
+fun PicksScreen(navController: NavController, viewModel: CoffeeViewModel) {
     Scaffold(
-        topBar = { ScreenTopBar(stringResource(R.string.settings_screen_title), navController) },
+        topBar = { ScreenTopBar(stringResource(R.string.picks_screen_title), navController) },
         bottomBar = { BottomBar(navController) }
     ) { innerPadding ->
         CoffeeRecommendationQuiz(

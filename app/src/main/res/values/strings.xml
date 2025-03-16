@@ -1,14 +1,28 @@
 <resources>
-    <string name="app_name">Scaffold and Navigation Walkthrough</string>
+    <string name="app_name">Coffee App</string>
     <string name="hamburger_menu_icon_description">Open Menu</string>
-    <string name="three_dots_for_more_icon_description">Open submenu</string>
     <string name="dropdown_text_for_info">Info</string>
-    <string name="dropdown_text_for_settings">Settings</string>
+    <string name="dropdown_text_for_picks">Picks</string>
     <string name="arrow_back_icon_description">Back</string>
+
+    // main screen
+    <string name="main_screen_title">Coffee App</string>
+    <string name="main_screen_title_content">Good Coffee Choices for the Day</string>
+    <string name="main_screen_button_text">Show More</string>
+
+    // info screen
     <string name="info_screen_title">Info</string>
     <string name="info_screen_content">Info Screen</string>
-    <string name="main_screen_title">My app</string>
-    <string name="main_screen_content">Home Screen</string>
-    <string name="settings_screen_title">Settings</string>
-    <string name="settings_screen_content">Settings Screen</string>
+
+    // picks screen
+    <string name="picks_screen_title">Picks</string>
+    <string name="picks_screen_title_content">Get a coffee recommendation based on the coffees in our today\'s recommended list based on the intensifier</string>
+    <string name="picks_screen_button_text">Submit</string>
+    <string name="picks_screen_recommendation_quiz_result_text">The recommended coffee is:</string>
+
+    // loading screen
+    <string name="loading_screen_content">Loading...</string>
+
+    // error screen
+    <string name="error_screen_text">Error retrieving data from API!</string>
 </resources>

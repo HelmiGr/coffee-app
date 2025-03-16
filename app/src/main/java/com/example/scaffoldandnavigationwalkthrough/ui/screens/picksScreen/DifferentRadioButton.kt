@@ -1,4 +1,4 @@
-package com.example.scaffoldandnavigationwalkthrough.ui.screens.recommendationScreen
+package com.example.scaffoldandnavigationwalkthrough.ui.screens.picksScreen
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth

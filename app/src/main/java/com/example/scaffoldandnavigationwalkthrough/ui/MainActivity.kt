@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import com.example.scaffoldandnavigationwalkthrough.ui.navigation.ScaffoldApp
+import com.example.scaffoldandnavigationwalkthrough.ui.navigation.CoffeeApp
 import com.example.scaffoldandnavigationwalkthrough.ui.theme.ScaffoldAndNavigationWalkthroughTheme
 
 class MainActivity : ComponentActivity() {
@@ -13,7 +13,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             ScaffoldAndNavigationWalkthroughTheme {
-                ScaffoldApp()
+                CoffeeApp()
             }
         }
     }
