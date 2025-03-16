@@ -9,7 +9,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavController
 import com.example.scaffoldandnavigationwalkthrough.R
 import com.example.scaffoldandnavigationwalkthrough.ui.appbars.BottomBar
-import com.example.scaffoldandnavigationwalkthrough.ui.appbars.MainTopAppBar
+import com.example.scaffoldandnavigationwalkthrough.ui.appbars.mainTopAppBar.MainTopAppBar
 import com.example.scaffoldandnavigationwalkthrough.ui.screens.ErrorScreen
 import com.example.scaffoldandnavigationwalkthrough.ui.screens.LoadingScreen
 import com.example.scaffoldandnavigationwalkthrough.viewmodels.CoffeeUiState

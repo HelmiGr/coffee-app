@@ -32,7 +32,10 @@ fun BottomBar(navController: NavController) {
             NavigationBarItem(
                 selected = selected,
                 onClick = { navController.navigate(tab.route) },
-                label = { Text(tab.label) },
+                label = { Text(
+                    tab.label,
+                    style = MaterialTheme.typography.bodyLarge
+                ) },
                 icon = { Icon(
                     imageVector = tab.icon,
                     contentDescription = null
