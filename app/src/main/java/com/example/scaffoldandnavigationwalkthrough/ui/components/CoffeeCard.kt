@@ -21,7 +21,7 @@ fun CoffeeCard(coffee: Coffee) {
             .fillMaxWidth()
             .padding(8.dp),
         colors = CardDefaults.cardColors(containerColor = Color.White),
-        elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
+        elevation = CardDefaults.cardElevation(defaultElevation = 4.dp),
     ) {
         Column(modifier = Modifier.padding(16.dp)) {
             Text(

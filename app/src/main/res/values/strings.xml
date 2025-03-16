@@ -12,13 +12,15 @@
 
     // info screen
     <string name="info_screen_title">Info</string>
-    <string name="info_screen_content">Info Screen</string>
+    <string name="info_screen_title_content">Coffee Information</string>
+    <string name="info_screen_text_content">Coffee is one of the most widely consumed beverages in the world, with over 2.25 billion cups consumed every day globally.</string>
 
     // picks screen
     <string name="picks_screen_title">Picks</string>
-    <string name="picks_screen_title_content">Get a coffee recommendation based on the coffees in our today\'s recommended list based on the intensifier</string>
+    <string name="picks_screen_title_content">Get A Coffee</string>
     <string name="picks_screen_button_text">Submit</string>
     <string name="picks_screen_recommendation_quiz_result_text">The recommended coffee is:</string>
+    <string name="picks_screen_description_or_content">Get a coffee picked for you based on the intensifier you feel like having</string>
 
     // loading screen
     <string name="loading_screen_content">Loading...</string>

@@ -11,7 +11,7 @@ import com.example.scaffoldandnavigationwalkthrough.ui.appbars.BottomBar
 import com.example.scaffoldandnavigationwalkthrough.ui.appbars.ScreenTopBar
 import com.example.scaffoldandnavigationwalkthrough.viewmodels.CoffeeViewModel
 
-// user can answer questions on what kind of a coffee they feel like trying today
+// user can answer a question on what kind of a coffee they feel like trying today
 // and the application will give a result based on the coffees retrieved from the api
 // (or the current ones retrieved since they change all the time)
 @Composable
