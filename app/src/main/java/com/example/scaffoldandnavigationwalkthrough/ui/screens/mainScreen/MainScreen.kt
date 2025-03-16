@@ -22,7 +22,7 @@ fun MainScreen(navController: NavController, modifier: Modifier, uiState: Coffee
     // there might be a problem with loading the different screens
 
     Scaffold(
-        topBar = { MainTopAppBar(stringResource(R.string.main_screen_title), navController) },
+        topBar = { MainTopAppBar(stringResource(R.string.main_screen_title), navController, viewModel.expanded, { viewModel.toggleExpanded() } ) },
         bottomBar = { BottomBar(navController) }
     ) { innerPadding ->
         when (uiState) {

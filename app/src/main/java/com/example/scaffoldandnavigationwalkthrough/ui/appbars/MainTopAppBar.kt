@@ -23,32 +23,23 @@ import com.example.scaffoldandnavigationwalkthrough.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MainTopAppBar(title: String, navController: NavController) {
-    var expanded by remember { mutableStateOf(false) }
+fun MainTopAppBar(title: String, navController: NavController, expanded: Boolean, onExpandedChange: (Boolean) -> Unit) {
         TopAppBar(
             colors = TopAppBarDefaults.topAppBarColors(
                 containerColor = MaterialTheme.colorScheme.primaryContainer,
                 titleContentColor = MaterialTheme.colorScheme.primary
             ),
             title = { Text(text = title) },
-            navigationIcon = {
-                IconButton(onClick = { /* do something */ }) {
+            actions = {
+                IconButton(onClick = { onExpandedChange(!expanded) } ) {
                     Icon(
                         imageVector = Icons.Filled.Menu,
-                        contentDescription = stringResource(R.string.hamburger_menu_icon_description)
-                    )
-                }
-            },
-            actions = {
-                IconButton(onClick = { expanded =! expanded }) {
-                    Icon(
-                        imageVector = Icons.Filled.MoreVert,
                         contentDescription = stringResource(R.string.three_dots_for_more_icon_description)
                     )
                 }
                 DropdownMenu(
                     expanded = expanded,
-                    onDismissRequest = { expanded = false }
+                    onDismissRequest = { onExpandedChange(false) }
                 ) {
                     DropdownMenuItem(
                         text = { Text(stringResource(R.string.dropdown_text_for_info)) },

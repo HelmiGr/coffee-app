@@ -40,6 +40,10 @@ class CoffeeViewModel: ViewModel() {
     var recommendedCoffee by mutableStateOf<Coffee?>(null)
         private set
 
+    // --- appbar states ---
+    // stores the main app bar state for hamburger menu
+    var expanded by mutableStateOf(false)
+
     // once initialized call these functions:
     init {
         getCoffeeList()
@@ -75,6 +79,11 @@ class CoffeeViewModel: ViewModel() {
         selectedIntensifier?.let { intensifier ->
             recommendedCoffee = displayedCoffees.firstOrNull { it.intensifier == intensifier }
         }
+    }
+
+    // change main top app bar expanded state
+    fun toggleExpanded() {
+        expanded = !expanded
     }
 
     // for testing
