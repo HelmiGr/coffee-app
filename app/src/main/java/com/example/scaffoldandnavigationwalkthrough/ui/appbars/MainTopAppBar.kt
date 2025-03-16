@@ -26,7 +26,7 @@ import com.example.scaffoldandnavigationwalkthrough.R
 fun MainTopAppBar(title: String, navController: NavController, expanded: Boolean, onExpandedChange: (Boolean) -> Unit) {
         TopAppBar(
             colors = TopAppBarDefaults.topAppBarColors(
-                containerColor = MaterialTheme.colorScheme.primaryContainer,
+                containerColor = MaterialTheme.colorScheme.secondary,
                 titleContentColor = MaterialTheme.colorScheme.primary
             ),
             title = { Text(text = title) },
